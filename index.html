@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Omega Eyes - Private ophthalmic surgeon practice specialising in cataract and ocular plastic surgery. Mr Jeremy Bowyer, Consultant Ophthalmic Surgeon.">
+    <meta name="keywords" content="ophthalmic surgeon, eye surgery, cataract surgery, ocular plastic surgery, consultant eye surgeon, private practice">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@600;700;800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Omega Eyes — Ophthalmic Surgery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --navy: #1B4A7A;
+            --cream: #F5F4F0;
+            --silver: #C5C5C5;
+            --white: #FFFFFF;
+            --dark-navy: #0F2A47;
+            --light-navy: #2D5F8D;
+            --ink: #14243A;
+            --serif: 'Playfair Display', Georgia, serif;
+            --brand: 'Montserrat', 'Segoe UI', sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--cream);
+            color: var(--ink);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+        
+        /* ============ NAVBAR ============ */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1.25rem 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.4s ease;
+            background: rgba(245, 244, 240, 0.72);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        
+        .navbar.scrolled {
+            background: rgba(245, 244, 240, 0.85);
+            backdrop-filter: blur(16px);
+            padding: 0.85rem 2.5rem;
+            box-shadow: 0 1px 30px rgba(15, 42, 71, 0.06);
+        }
+        
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+        }
+        
+        .nav-brand img {
+            width: 54px;
+            height: 54px;
+            object-fit: contain;
+        }
+        
+        .nav-brand-text {
+            font-family: var(--brand);
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--navy);
+            transition: color 0.4s ease;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        
+        .navbar.scrolled .nav-brand-text {
+            color: var(--navy);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.25rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-navy);
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .navbar.scrolled .nav-links a {
+            color: var(--dark-navy);
+        }
+        
+        .nav-links a:not(.nav-cta)::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: currentColor;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:not(.nav-cta):hover::after {
+            width: 100%;
+        }
+        
+        .nav-cta {
+            background: var(--navy);
+            color: var(--white) !important;
+            padding: 0.6rem 1.4rem;
+            border-radius: 100px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled .nav-cta {
+            background: var(--navy);
+            color: var(--white) !important;
+        }
+        
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(27, 74, 122, 0.25);
+        }
+        
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0.5rem;
+        }
+        
+        .nav-toggle span {
+            width: 26px;
+            height: 2px;
+            background: var(--navy);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled .nav-toggle span {
+            background: var(--navy);
+        }
+        
+        /* ============ HERO ============ */
+        .hero {
+            position: relative;
+            padding-top: 96px;
+            background: var(--cream);
+        }
+        
+        .hero-banner {
+            width: 100%;
+            line-height: 0;
+            position: relative;
+        }
+        
+        .hero-banner::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -1px;
+            height: 38%;
+            background: linear-gradient(to bottom, rgba(27, 74, 122, 0) 0%, var(--navy) 100%);
+            pointer-events: none;
+        }
+        
+        .hero-banner img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .hero-content {
+            background: linear-gradient(160deg, var(--navy) 0%, var(--dark-navy) 100%);
+            text-align: center;
+            padding: 3rem 2rem 6rem;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content::before {
+            content: '';
+            position: absolute;
+            top: -120px;
+            right: -120px;
+            width: 360px;
+            height: 360px;
+            background: radial-gradient(circle, rgba(255,255,255,0.06), transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .hero-inner {
+            position: relative;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+        
+        .hero-eyebrow {
+            display: inline-block;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            padding: 0.5rem 1.25rem;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            border-radius: 100px;
+            margin-bottom: 2rem;
+            animation: fadeUp 0.9s ease both;
+        }
+        
+        .hero-content h1 {
+            font-family: var(--serif);
+            font-size: clamp(2.6rem, 6vw, 4.8rem);
+            font-weight: 500;
+            line-height: 1.05;
+            letter-spacing: -1.5px;
+            margin-bottom: 1.5rem;
+            animation: fadeUp 0.9s ease 0.15s both;
+        }
+        
+        .hero-content h1 em {
+            font-style: italic;
+            font-weight: 400;
+        }
+        
+        .hero-content p {
+            font-size: clamp(1.05rem, 2vw, 1.3rem);
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            font-weight: 400;
+            animation: fadeUp 0.9s ease 0.3s both;
+        }
+        
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeUp 0.9s ease 0.45s both;
+        }
+        
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* ============ BUTTONS ============ */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.95rem 2rem;
+            border: none;
+            border-radius: 100px;
+            font-family: inherit;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .btn-primary {
+            background: var(--white);
+            color: var(--navy);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: var(--white);
+        }
+        
+        .btn-navy {
+            background: var(--navy);
+            color: var(--white);
+        }
+        
+        .btn-navy:hover {
+            background: var(--dark-navy);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(27, 74, 122, 0.3);
+        }
+        
+        /* ============ SECTIONS ============ */
+        section {
+            padding: 7rem 2.5rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-eyebrow {
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--light-navy);
+            margin-bottom: 1rem;
+        }
+        
+        .section-title {
+            font-family: var(--serif);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 500;
+            color: var(--navy);
+            letter-spacing: -1px;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+        }
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* ============ ABOUT ============ */
+        .about {
+            background: var(--white);
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+        
+        .about-text p {
+            color: #4a5a6e;
+            font-size: 1.08rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-text p:first-of-type {
+            font-size: 1.25rem;
+            color: var(--ink);
+            font-weight: 400;
+        }
+        
+        .about-card {
+            background: linear-gradient(145deg, var(--navy) 0%, var(--dark-navy) 100%);
+            color: var(--white);
+            padding: 3rem;
+            border-radius: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-card::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255,255,255,0.08), transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .about-card h3 {
+            font-family: var(--serif);
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .about-card .credential {
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        }
+        
+        .about-card .credential:last-child {
+            border-bottom: none;
+        }
+        
+        .about-card .credential .label {
+            font-size: 0.78rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.55);
+            margin-bottom: 0.25rem;
+        }
+        
+        .about-card .credential .value {
+            font-size: 1.05rem;
+            font-weight: 500;
+        }
+        
+        /* ============ SPECIALTIES ============ */
+        .specialties {
+            background: var(--cream);
+        }
+        
+        .specialties-header {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 4rem;
+        }
+        
+        .specialties-header p {
+            color: #4a5a6e;
+            font-size: 1.1rem;
+        }
+        
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            transition: all 0.4s ease;
+            border: 1px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--navy), var(--light-navy));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(27, 74, 122, 0.12);
+        }
+        
+        .card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .card-number {
+            font-family: var(--serif);
+            font-size: 2.5rem;
+            color: rgba(27, 74, 122, 0.12);
+            font-weight: 600;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+        
+        .card h3 {
+            font-family: var(--serif);
+            font-size: 1.35rem;
+            font-weight: 500;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+        }
+        
+        .card p {
+            color: #5a6a7e;
+            font-size: 0.98rem;
+        }
+        
+        /* ============ PRACTICE ============ */
+        .practice {
+            background: var(--white);
+        }
+        
+        .practice-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .practice-item {
+            padding: 2.5rem;
+            border-radius: 20px;
+            background: var(--cream);
+            transition: all 0.3s ease;
+        }
+        
+        .practice-item:hover {
+            background: linear-gradient(145deg, var(--navy), var(--dark-navy));
+            transform: translateY(-4px);
+        }
+        
+        .practice-item:hover * {
+            color: var(--white) !important;
+        }
+        
+        .practice-item .tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--light-navy);
+            margin-bottom: 1rem;
+        }
+        
+        .practice-item h3 {
+            font-family: var(--serif);
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+        
+        .practice-item p {
+            color: #7a8a9e;
+            font-size: 0.95rem;
+        }
+        
+        /* ============ INSURANCE ============ */
+        .insurance {
+            background: var(--cream);
+            text-align: center;
+        }
+        
+        .insurance-header {
+            max-width: 650px;
+            margin: 0 auto 3.5rem;
+        }
+        
+        .insurance-header p {
+            color: #4a5a6e;
+            font-size: 1.1rem;
+        }
+        
+        .insurer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .insurer-pill {
+            background: var(--white);
+            padding: 0.9rem 1.75rem;
+            border-radius: 100px;
+            color: var(--navy);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(27, 74, 122, 0.08);
+        }
+        
+        .insurer-pill:hover {
+            background: var(--navy);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(27, 74, 122, 0.2);
+        }
+        
+        .insurance-note {
+            margin-top: 2.5rem;
+            color: #7a8a9e;
+            font-size: 1rem;
+        }
+        
+        /* ============ SELF-PAY ============ */
+        .selfpay {
+            background: var(--cream);
+            padding-top: 2rem;
+        }
+        
+        .selfpay-card {
+            max-width: 760px;
+            margin: 0 auto;
+            text-align: center;
+            background: linear-gradient(160deg, #ffffff 0%, #eef3f8 100%);
+            border: 1px solid rgba(27, 74, 122, 0.1);
+            border-radius: 24px;
+            padding: 3.5rem 3rem;
+            box-shadow: 0 20px 50px rgba(27, 74, 122, 0.08);
+        }
+        
+        .selfpay-card .section-eyebrow {
+            color: var(--light-navy);
+        }
+        
+        .selfpay-card .section-title {
+            margin-bottom: 1.25rem;
+        }
+        
+        .selfpay-lead {
+            font-family: var(--serif);
+            font-size: clamp(1.35rem, 3vw, 1.6rem);
+            color: var(--navy);
+            margin-bottom: 0.85rem;
+        }
+        
+        .selfpay-card p:not(.selfpay-lead):not(.section-eyebrow) {
+            color: #4a5a6e;
+            font-size: 1.1rem;
+            max-width: 560px;
+            margin: 0 auto;
+        }
+        
+        .selfpay-card .btn {
+            margin-top: 1.75rem;
+        }
+        
+        /* ============ CONTACT ============ */
+        .contact {
+            background: linear-gradient(145deg, var(--navy) 0%, var(--dark-navy) 100%);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,255,255,0.05), transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .contact-inner {
+            position: relative;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+        
+        .contact .section-eyebrow {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .contact .section-title {
+            color: var(--white);
+        }
+        
+        .contact p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1.15rem;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-email {
+            display: inline-block;
+            font-family: var(--serif);
+            font-size: 1.6rem;
+            color: var(--white);
+            text-decoration: none;
+            margin-bottom: 2.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 0.25rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .contact-email:hover {
+            border-color: var(--white);
+        }
+        
+        /* ============ FOOTER ============ */
+        footer {
+            background: var(--dark-navy);
+            color: rgba(255, 255, 255, 0.6);
+            padding: 3.5rem 2.5rem;
+            text-align: center;
+        }
+        
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-brand img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+        }
+        
+        .footer-brand span {
+            font-family: var(--brand);
+            font-size: 1.05rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--white);
+        }
+        
+        footer p {
+            font-size: 0.88rem;
+            margin-bottom: 0.4rem;
+        }
+        
+        .footer-disclaimer {
+            max-width: 600px;
+            margin: 1.5rem auto 0;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.4);
+            line-height: 1.6;
+        }
+        
+        /* ============ MODAL ============ */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            background: rgba(15, 42, 71, 0.6);
+            backdrop-filter: blur(6px);
+            animation: modalFade 0.3s ease;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+        
+        @keyframes modalFade {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .modal-content {
+            background: var(--white);
+            margin: 4% auto;
+            padding: 3rem;
+            border-radius: 24px;
+            max-width: 520px;
+            width: 100%;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+            animation: modalSlide 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        @keyframes modalSlide {
+            from { transform: translateY(40px) scale(0.98); opacity: 0; }
+            to { transform: translateY(0) scale(1); opacity: 1; }
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+        }
+        
+        .modal-header h3 {
+            font-family: var(--serif);
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: var(--navy);
+        }
+        
+        .modal-close {
+            background: var(--cream);
+            border: none;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            color: var(--navy);
+            cursor: pointer;
+            line-height: 1;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+        
+        .modal-close:hover {
+            background: var(--navy);
+            color: var(--white);
+            transform: rotate(90deg);
+        }
+        
+        .form-group {
+            margin-bottom: 1.35rem;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group label {
+            color: var(--navy);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            padding: 0.85rem 1rem;
+            border: 1px solid rgba(27, 74, 122, 0.15);
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            background: var(--cream);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--navy);
+            background: var(--white);
+            box-shadow: 0 0 0 4px rgba(27, 74, 122, 0.08);
+        }
+        
+        .form-note {
+            background: rgba(27, 74, 122, 0.05);
+            padding: 1rem 1.25rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            font-size: 0.88rem;
+            color: #5a6a7e;
+        }
+        
+        .form-note p {
+            margin: 0;
+        }
+        
+        .modal .btn {
+            width: 100%;
+            justify-content: center;
+        }
+        
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 900px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem 1.5rem;
+            }
+            
+            .navbar.scrolled {
+                padding: 0.75rem 1.5rem;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 75%;
+                max-width: 320px;
+                height: 100vh;
+                background: var(--white);
+                flex-direction: column;
+                justify-content: center;
+                gap: 2rem;
+                transition: right 0.4s ease;
+                box-shadow: -10px 0 40px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.open {
+                right: 0;
+            }
+            
+            .nav-links a {
+                color: var(--navy) !important;
+                font-size: 1.1rem;
+            }
+            
+            .nav-cta {
+                background: var(--navy);
+                color: var(--white) !important;
+            }
+            
+            .nav-toggle {
+                display: flex;
+                z-index: 101;
+            }
+            
+            section {
+                padding: 5rem 1.5rem;
+            }
+            
+            .about-card {
+                padding: 2rem;
+            }
+            
+            .modal-content {
+                padding: 2rem;
+                margin: 5% auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-brand">
+            <img src="omega-mark.png" alt="Omega Eyes">
+            <span class="nav-brand-text">Omega Eyes</span>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="#about">About</a>
+            <a href="#specialties">Specialties</a>
+            <a href="#practice">Practice</a>
+            <a href="#insurance">Insurance</a>
+            <a href="#contact" class="nav-cta">Get in Touch</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+    
+    <!-- HERO -->
+    <header class="hero">
+        <div class="hero-banner">
+            <img src="omegaeyesbanner.jpg" alt="Omega Eyes">
+        </div>
+        <div class="hero-content">
+            <div class="hero-inner">
+                <span class="hero-eyebrow">Consultant Ophthalmic Surgeon</span>
+                <h1>Clarity of vision,<br><em>quality of care</em></h1>
+                <p>Mr Jeremy Bowyer offers specialist eye surgery and expert ophthalmic care across Staffordshire and beyond.</p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary" onclick="openContactModal()">Make an Enquiry</button>
+                    <a href="#about" class="btn btn-outline">Discover More</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- ABOUT -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <p class="section-eyebrow">About</p>
+                    <h2 class="section-title">Mr Jeremy Bowyer</h2>
+                    <p>A Consultant Ophthalmic Surgeon with extensive expertise in specialist eye surgery and procedures.</p>
+                    <p>Passionate about eye health, Mr Bowyer welcomes enquiries about any and all general ocular conditions. He combines his NHS practice at the Royal Stoke University Hospital with a distinguished private practice serving patients across the region.</p>
+                </div>
+                <div class="about-card reveal">
+                    <h3>At a Glance</h3>
+                    <div class="credential">
+                        <div class="label">Title</div>
+                        <div class="value">Consultant Ophthalmic Surgeon</div>
+                    </div>
+                    <div class="credential">
+                        <div class="label">NHS Practice</div>
+                        <div class="value">Royal Stoke University Hospital</div>
+                    </div>
+                    <div class="credential">
+                        <div class="label">Private Practice</div>
+                        <div class="value">The North Staffordshire Nuffield Hospital</div>
+                    </div>
+                    <div class="credential">
+                        <div class="label">Company</div>
+                        <div class="value">Omega Eyes Ltd &middot; 10697376</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- SPECIALTIES -->
+    <section class="specialties" id="specialties">
+        <div class="container">
+            <div class="specialties-header reveal">
+                <p class="section-eyebrow">Expertise</p>
+                <h2 class="section-title">Areas of Specialism</h2>
+                <p>Mr Bowyer offers a comprehensive range of specialist ophthalmic procedures and treatments.</p>
+            </div>
+            <div class="cards-grid">
+                <div class="card reveal">
+                    <div class="card-number">01</div>
+                    <h3>Cataract Surgery</h3>
+                    <p>Advanced surgical techniques for cataract removal and intraocular lens implantation.</p>
+                </div>
+                <div class="card reveal">
+                    <div class="card-number">02</div>
+                    <h3>Ocular Plastic Surgery</h3>
+                    <p>Specialist surgical and cosmetic procedures of the eyelids and surrounding structures.</p>
+                </div>
+                <div class="card reveal">
+                    <div class="card-number">03</div>
+                    <h3>Lacrimal Surgery</h3>
+                    <p>Expert management of tear duct and tear production disorders.</p>
+                </div>
+                <div class="card reveal">
+                    <div class="card-number">04</div>
+                    <h3>Orbital Surgery</h3>
+                    <p>Complex surgical management of orbit-related conditions and pathology.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- PRACTICE -->
+    <section class="practice" id="practice">
+        <div class="container">
+            <div class="reveal">
+                <p class="section-eyebrow">Locations</p>
+                <h2 class="section-title">Where to Find Us</h2>
+            </div>
+            <div class="practice-grid">
+                <div class="practice-item reveal">
+                    <span class="tag">NHS</span>
+                    <h3>Royal Stoke University Hospital</h3>
+                    <p>Mr Bowyer's NHS consultant practice.</p>
+                </div>
+                <div class="practice-item reveal">
+                    <span class="tag">Private</span>
+                    <h3>The North Staffordshire Nuffield Hospital</h3>
+                    <p>Private consultations and surgery.</p>
+                </div>
+                <div class="practice-item reveal">
+                    <span class="tag">Private</span>
+                    <h3>Additional Locations</h3>
+                    <p>Further specialist private facilities across Staffordshire.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- INSURANCE -->
+    <section class="insurance" id="insurance">
+        <div class="container">
+            <div class="insurance-header reveal">
+                <p class="section-eyebrow">Insurance</p>
+                <h2 class="section-title">Registered With All Major Insurers</h2>
+                <p>Enabling seamless referrals and claims processing for eligible patients.</p>
+            </div>
+            <div class="insurer-grid reveal">
+                <span class="insurer-pill">Bupa</span>
+                <span class="insurer-pill">AXA Health</span>
+                <span class="insurer-pill">Aviva</span>
+                <span class="insurer-pill">VitalityHealth</span>
+                <span class="insurer-pill">WPA</span>
+                <span class="insurer-pill">The Exeter</span>
+                <span class="insurer-pill">Allianz Care</span>
+                <span class="insurer-pill">Saga</span>
+                <span class="insurer-pill">Benenden Health</span>
+            </div>
+        </div>
+    </section>
+    
+    <!-- SELF-PAY -->
+    <section class="selfpay" id="selfpay">
+        <div class="container">
+            <div class="selfpay-card reveal">
+                <p class="section-eyebrow">Self-Pay</p>
+                <h2 class="section-title">Private Self-Pay Patients Warmly Welcomed</h2>
+                <p class="selfpay-lead">We also warmly welcome private self-pay patients.</p>
+                <p>Please contact us to discuss the range of payment options for private self-pay patients.</p>
+                <button class="btn btn-navy" onclick="openContactModal()">Discuss Payment Options</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <div class="contact-inner reveal">
+            <p class="section-eyebrow">Contact</p>
+            <h2 class="section-title">Get In Touch</h2>
+            <p>To discuss your eye care needs or arrange an appointment with Mr Jeremy Bowyer.</p>
+            <a href="mailto:reception@omegaeyes.co.uk" class="contact-email">reception@omegaeyes.co.uk</a>
+            <br>
+            <button class="btn btn-primary" onclick="openContactModal()">Send a Message</button>
+        </div>
+    </section>
+    
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-brand">
+            <img src="omega-mark.png" alt="Omega Eyes">
+            <span>Omega Eyes</span>
+        </div>
+        <p>&copy; 2026 Omega Eyes Ltd. All rights reserved.</p>
+        <p>UK Company Registration: 10697376</p>
+        <p class="footer-disclaimer">This website provides general information and does not replace professional medical advice. Please consult with a healthcare professional for personalised guidance.</p>
+    </footer>
+    
+    <!-- CONTACT MODAL -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Get In Touch</h3>
+                <button class="modal-close" onclick="closeContactModal()">&times;</button>
+            </div>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone *</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <div class="form-note">
+                    <p>* Please provide either an email address or phone number so we can get back to you.</p>
+                </div>
+                <button type="submit" class="btn btn-navy">Send Message</button>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 60) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Mobile menu
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+        });
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => navLinks.classList.remove('open'));
+        });
+        
+        // Scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        
+        // Modal
+        function openContactModal() {
+            document.getElementById('contactModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        function closeContactModal() {
+            document.getElementById('contactModal').style.display = 'none';
+            document.body.style.overflow = '';
+        }
+        window.addEventListener('click', (e) => {
+            if (e.target === document.getElementById('contactModal')) {
+                closeContactModal();
+            }
+        });
+        
+        // Form submit
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            if (!email && !phone) {
+                alert('Please provide either an email address or phone number so we can contact you.');
+                return;
+            }
+            if (!name || !message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            let emailBody = `Name: ${name}\n`;
+            if (email) emailBody += `Email: ${email}\n`;
+            if (phone) emailBody += `Phone: ${phone}\n`;
+            if (!email && phone) {
+                emailBody += `\n*** This enquiry has NO email address. Please reply by telephone using the number above. ***\n`;
+            }
+            emailBody += `\nMessage:\n${message}`;
+            
+            const subject = `New Enquiry from ${name}`;
+            window.location.href = `mailto:reception@omegaeyes.co.uk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+            
+            closeContactModal();
+            this.reset();
+        });
+    </script>
+</body>
+</html>
